@@ -14,6 +14,10 @@ export default function App() {
   console.log("Task selected:", taskSelected)
 
   const handleAddTask = () => {
+    if(!userInput){
+      console.warn("El campo está vacío")
+      return
+    }
     setTasksList([...tasksList, { id: Math.random(), value: userInput }])
     setUserInput("")
   }
